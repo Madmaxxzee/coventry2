@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- intl-tel-input CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+      rel="stylesheet"
+    />
+    <title>Coventry Gardens 2</title>
+    <link rel="stylesheet" href="style6.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <img src="media/hero.jpg" alt="Hero" />
+      <h1 id="projectName"></h1>
+      <p id="projectTagline"></p>
+      <button onclick="document.getElementById('enquire').scrollIntoView()">
+        Enquire Now
+      </button>
+    </header>
+    <h2 id="heading" class="text-center">Gallery</h2>
+    <section class="gallery" id="gallerySection"></section>
+
+    <h2 id="heading" class="text-center">Layouts</h2>
+    <section class="layouts" id="layoutsSection"></section>
+
+    <section class="downloads">
+      <!-- <a id="brochureLink" href="#" target="_blank">Download Brochure</a> -->
+      <a id="brochureLink" href="#" download>Download Brochure</a>
+      <a id="factsheetLink" href="#" download>Download Factsheet</a>
+    </section>
+    <h2 id="heading" class="text-center">Location</h2>
+    <section class="location">
+      <iframe
+        class="map"
+        height="400"
+        style="border: 0"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=25.0950000,55.3791111&hl=en&z=16&output=embed"
+      >
+      </iframe>
+    </section>
+
+    <section class="container py-4">
+      <h2 id="heading" class="text-center">Request a Callback</h2>
+      <form id="contactForm" class="row g-2 align-items-center">
+        <div class="col-md-3">
+          <input
+            id="name"
+            class="form-control"
+            placeholder="First name*"
+            required
+          />
+        </div>
+        <div class="col-md-3">
+          <input
+            id="email"
+            type="email"
+            class="form-control"
+            placeholder="Email*"
+            required
+          />
+        </div>
+        <div class="col-md-3">
+          <input
+            id="phone"
+            type="tel"
+            class="form-control"
+            placeholder="Mobile number*"
+            required
+          />
+        </div>
+
+        <div class="col-md-3">
+          <button type="submit" class="btn btn-success w-100">Submit</button>
+        </div>
+        <div
+          id="successMsg"
+          class="form-success col-12 mt-2"
+          style="display: none"
+        >
+          Thank you! We’ll contact you soon.
+        </div>
+      </form>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="script6.js"></script>
+  </body>
+</html>

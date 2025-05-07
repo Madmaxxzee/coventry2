@@ -1,0 +1,24 @@
+{
+  "project_id": "106",
+  "project_name": "Coventry Gardens 2",
+  "tagline": "A Sanctuary of Serene Living",
+  "hero_image": "media/hero.jpg",
+  "location_map": "media/location_map.jpg",
+  "brochure": "media/Downloads/brochure.pdf",
+  "factsheet": "media/Downloads/Factsheet.pdf",
+  "layouts": [
+    "studio.jpg",
+    "1bhk.jpg",
+    "1bhk2.jpg",
+    "2bhk.jpg"
+  ],
+  "gallery": [
+    "1.jpeg", "2.jpeg", "3.jpeg",
+    "4.jpeg", "5.jpeg", "6.jpeg",
+    "7.jpeg", "8.jpeg", "9.jpeg",
+    "10.jpeg", "11.jpeg", "12.jpeg",
+    "13.jpeg", "14.jpeg", "15.jpeg",
+    "16.jpeg", "17.jpeg", "18.jpeg",
+    "19.jpeg"
+  ]
+}
