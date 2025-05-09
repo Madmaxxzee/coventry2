@@ -20,5 +20,6 @@
     "13.jpeg", "14.jpeg", "15.jpeg",
     "16.jpeg", "17.jpeg", "18.jpeg",
     "19.jpeg"
-  ]
+  ],
+  "amenities_file": "media/103/amenities.txt"
 }

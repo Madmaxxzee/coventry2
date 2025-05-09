@@ -54,9 +54,16 @@ section {
   margin: auto;
 }
 
-.gallery img, .layouts img {
+.layouts img {
   width: 100%;
   max-width: 300px;
+  margin: 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+.gallery img {
+  width: 100%;
+  max-width: 100%;
   margin: 10px;
   border-radius: 8px;
   display: inline-block;
@@ -121,14 +128,12 @@ section {
   font-weight: bold;
 }
 #gallerySection {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: start; /* or 'flex-start' if you prefer left alignment */
-  padding: 20px;
+padding: 0px;
+background-color: black;
+
 }
 
-#gallerySection img {
+/* #gallerySection img {
   width: 200px;
   height: 150px;
   object-fit: cover;
@@ -139,7 +144,7 @@ section {
 
 #gallerySection img:hover {
   transform: scale(1.05);
-}
+} */
 
 #layoutsSection {
   display: flex;
@@ -182,4 +187,74 @@ section.container h2 {
 #heading{
   margin-top: 30px;
   font-weight: 600;
+}
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  color: black;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.content button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#carouselGallery {
+  width: 100%;
+  max-width: 100%;
+}
+
+#carouselGallery .carousel-item img {
+  height: 500px;         /* 🔧 Adjust height as needed */
+  object-fit: contain;     /* Ensures the image covers the area */
+  width: 100%;
+}
+.custom-modal-size .modal-content {
+  max-height: 500px; /* Adjust the height as needed */
+  overflow-y: auto; /* Allows scrolling if content exceeds the height */
+}
+
+.custom-modal-size .modal-body {
+  padding: 10px; /* Adjust padding as needed */
+}
+
+#modalVideo {
+  width: 100%;
+  height: 400px; /* Set the height of the video */
+  object-fit: cover;
 }

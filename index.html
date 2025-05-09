@@ -18,25 +18,103 @@
     <link rel="stylesheet" href="style6.css" />
   </head>
   <body>
-    <header class="hero">
-      <img src="media/hero.jpg" alt="Hero" />
-      <h1 id="projectName"></h1>
-      <p id="projectTagline"></p>
-      <button onclick="document.getElementById('enquire').scrollIntoView()">
-        Enquire Now
-      </button>
+    <header class="hero" id="heroSection">
+      <video id="heroVideo" autoplay muted loop playsinline>
+        <source src="Herovideo.mp4" type="video/mp4" />
+      </video>
+
+      <!-- All content inside one div, positioned bottom-center -->
     </header>
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered custom-modal-size">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="videoModalLabel">Luxury Apartment</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <video id="modalVideo" controls>
+              <source src="media/heroVideo.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-container">
+      <div class="content text-center px-3">
+        <h1 id="projectName" class="mb-3 fw-bold display-4">
+          Your Project Name
+        </h1>
+        <p id="projectTagline" class="mb-2 lead">
+          Your project tagline goes here.
+        </p>
+        <p class="mb-4">
+          Your search will end upon Coventry Gardens 2, Dubai Land Residence
+          Complex (DLRC), Dubai.<br />
+          Find your sanctuary, your family abode, and you will find luxury
+          matching your lifestyle.
+        </p>
+        <button
+          class="btn btn-success btn-lg mt-0"
+          onclick="document.getElementById('enquire').scrollIntoView()"
+        >
+          Enquire Now
+        </button>
+      </div>
+    </div>
     <h2 id="heading" class="text-center">Gallery</h2>
-    <section class="gallery" id="gallerySection"></section>
+    <section class="gallery" id="gallerySection">
+      <div id="carouselGallery" class="carousel slide" data-bs-ride="carousel">
+        <!-- Dots / Indicators -->
+        <div class="carousel-indicators" id="carouselIndicators"></div>
+
+        <!-- Carousel Items -->
+        <div class="carousel-inner" id="carouselInner"></div>
+
+        <!-- Prev/Next Controls -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselGallery"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselGallery"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
 
     <h2 id="heading" class="text-center">Layouts</h2>
     <section class="layouts" id="layoutsSection"></section>
 
     <section class="downloads">
       <!-- <a id="brochureLink" href="#" target="_blank">Download Brochure</a> -->
-      <a id="brochureLink" href="#" download>Download Brochure</a>
-      <a id="factsheetLink" href="#" download>Download Factsheet</a>
+      <a id="brochureLink" href="#" class="download-link" download
+        >Download Brochure</a
+      >
+      <a id="factsheetLink" href="#" class="download-link" download
+        >Download Factsheet</a
+      >
+      <a id="paymentplan" href="#" class="download-link" download
+        >Download Payment Plan</a
+      >
     </section>
+    <section class="container-fluid bg-light py-5">
+      <div class="container">
+        <h2 id="heading" class="fw-bold text-center mb-4">Amenities</h2>
+        <div id="amenities" class="row justify-content-center text-center"></div>
+      </div>
+    </section>
+    
+    
     <h2 id="heading" class="text-center">Location</h2>
     <section class="location">
       <iframe
@@ -50,8 +128,26 @@
       >
       </iframe>
     </section>
-
-    <section class="container py-4">
+    <section class="container bg-white">
+      <h2 class="text-center fw-bold">Location & Distance</h2>
+      <div class="row">
+        <div class="col-12 col-md-6 text-center p-4 rounded fs-4 fw-bold">
+          10–15 min walk<br />
+          Global Village<br />
+          Dubai Internation Academy City<br />
+          Dubai Outlet Mall<br />
+          Mirdif City Center
+        </div>
+        <div class="col-12 col-md-6 text-center p-4 rounded fs-4 fw-bold">
+          15-20 min walk<br />
+          Downtown & Burj Khalifa<br />
+          Dubai International Airport<br />
+          Miracle Garden<br />
+          Dubai Hills Mall
+        </div>
+      </div>
+    </section>
+    <section class="container py-4" id="enquire">
       <h2 id="heading" class="text-center">Request a Callback</h2>
       <form id="contactForm" class="row g-2 align-items-center">
         <div class="col-md-3">
@@ -82,7 +178,14 @@
         </div>
 
         <div class="col-md-3">
-          <button type="submit" class="btn btn-success w-100">Submit</button>
+          <button id="submitBtn" type="submit" class="btn btn-success w-100">
+            <span
+              id="spinner"
+              class="spinner-border spinner-border-sm"
+              style="display: none"
+            ></span>
+            Submit
+          </button>
         </div>
         <div
           id="successMsg"
@@ -93,6 +196,7 @@
         </div>
       </form>
     </section>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script src="script6.js"></script>
