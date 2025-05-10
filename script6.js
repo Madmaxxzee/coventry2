@@ -1,6 +1,8 @@
 // Load JSON and inject content
 
 let downloadAfterSubmit = null;
+let formWasSubmitted = false;
+let openModalAfterSubmit = false;
 const amenitiesDiv = document.getElementById("amenities");
 const base = "media"; // Make sure this is correctly defined
 fetch(`${base}/amenities.txt`)
@@ -27,26 +29,35 @@ fetch(`${base}/amenities.txt`)
 
   
 
-document.querySelectorAll(".download-link").forEach((link) => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    downloadAfterSubmit = this;
-    document.getElementById("enquire").scrollIntoView({ behavior: "smooth" });
+  document.querySelectorAll(".download-link").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      if (formWasSubmitted) {
+        // Direct download
+        const tempLink = document.createElement("a");
+        tempLink.href = this.href;
+        tempLink.download = "";
+        tempLink.click();
+      } else {
+        e.preventDefault();
+        downloadAfterSubmit = this;
+        document.getElementById("enquire").scrollIntoView({ behavior: "smooth" });
+      }
+    });
   });
+document.getElementById("viewApartmentBtn").addEventListener("click", function () {
+  if (formWasSubmitted) {
+    showVideoModal();
+  } else {
+    openModalAfterSubmit = true;
+    document.getElementById("contactForm").scrollIntoView({ behavior: "smooth" });
+  }
 });
-document.getElementById("heroSection").addEventListener("click", function () {
-  // Show the modal
-  const videoModal = new bootstrap.Modal(document.getElementById("videoModal"));
-  videoModal.show();
-
-  // Play the video inside the modal
-  const modalVideo = document.getElementById("modalVideo");
-  modalVideo.play();
-
-  // Stop the hero video when the modal is shown
-  const heroVideo = document.getElementById("heroVideo");
-  heroVideo.pause();
-});
+function showVideoModal() {
+  const modal = new bootstrap.Modal(document.getElementById("videoModal"));
+  modal.show();
+  document.getElementById("modalVideo").play();
+  document.getElementById("heroVideo").pause();
+}
 
 // Listen for the modal being closed
 document
@@ -108,6 +119,7 @@ fetch("106.json")
     // Downloads
     document.getElementById("brochureLink").href = `${data.brochure}`;
     document.getElementById("factsheetLink").href = `${data.factsheet}`;
+    document.getElementById("paymentplan").href = `${data.paymentplan}`;
   });
 
 // Form submission
@@ -150,17 +162,22 @@ form.addEventListener("submit", async (e) => {
 
   if (res.ok) {
     successMsg.style.display = "block";
+    form.reset()
+    formWasSubmitted = true;
     document.querySelectorAll(".download-link").forEach((link) => {});
     // Re-enable the button and hide the spinner
     submitBtn.disabled = false;
     spinner.style.display = "none";
-
+    if (openModalAfterSubmit) {
+      showVideoModal();
+      openModalAfterSubmit = false;
+    }
     // Trigger the download if a link was clicked earlier
     if (downloadAfterSubmit) {
       const link = downloadAfterSubmit;
       const tempLink = document.createElement("a");
       tempLink.href = link.href;
-      tempLink.download = ""; // Trigger download
+      tempLink.download = "";
       tempLink.click();
       downloadAfterSubmit = null;
     }

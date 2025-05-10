@@ -84,7 +84,7 @@ section {
   width: 100%;
   display: flex;
   justify-content: center; /* centers horizontally */
-  align-items: center;     /* optional: centers vertically if needed */
+  align-items: center; /* optional: centers vertically if needed */
   padding: 20px;
   margin: auto;
 }
@@ -92,7 +92,6 @@ section {
   width: 95%;
   max-width: 1500px;
 }
-
 
 .enquiry-form form {
   max-width: 600px;
@@ -102,7 +101,8 @@ section {
   gap: 15px;
 }
 
-.enquiry-form input, .enquiry-form button {
+.enquiry-form input,
+.enquiry-form button {
   padding: 12px;
   font-size: 1rem;
   border-radius: 5px;
@@ -110,12 +110,12 @@ section {
   width: 100%;
 }
 
-.enquiry-form button {
+/* .enquiry-form button {
   background-color: #006837;
   color: white;
   border: none;
   cursor: pointer;
-}
+} */
 
 .enquiry-form button:hover {
   background-color: #004f29;
@@ -128,9 +128,8 @@ section {
   font-weight: bold;
 }
 #gallerySection {
-padding: 0px;
-background-color: black;
-
+  padding: 0px;
+  background-color: black;
 }
 
 /* #gallerySection img {
@@ -148,18 +147,18 @@ background-color: black;
 
 #layoutsSection {
   display: flex;
-  flex-wrap: nowrap;     /* ensures images stay on one row */
+  flex-wrap: nowrap; /* ensures images stay on one row */
   gap: 10px;
-  justify-content: start;  /* or flex-start for left-alignment */
-  overflow-x: auto;       /* enables horizontal scroll on smaller screens */
+  justify-content: start; /* or flex-start for left-alignment */
+  overflow-x: auto; /* enables horizontal scroll on smaller screens */
   padding: 20px;
 }
 
 #layoutsSection img {
-  width: 250px;           /* adjust width if needed */
+  width: 250px; /* adjust width if needed */
   height: 280px;
   object-fit: cover;
-  flex-shrink: 0;         /* prevents images from shrinking */
+  flex-shrink: 0; /* prevents images from shrinking */
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease;
@@ -184,7 +183,7 @@ section.container h2 {
   margin-top: 1rem;
   text-align: center;
 }
-#heading{
+#heading {
   margin-top: 30px;
   font-weight: 600;
 }
@@ -225,7 +224,7 @@ section.container h2 {
   margin: 0.5rem 0;
 }
 
-.content button {
+/* .content button {
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -233,15 +232,15 @@ section.container h2 {
   color: white;
   border: none;
   cursor: pointer;
-}
+} */
 #carouselGallery {
   width: 100%;
   max-width: 100%;
 }
 
 #carouselGallery .carousel-item img {
-  height: 500px;         /* 🔧 Adjust height as needed */
-  object-fit: contain;     /* Ensures the image covers the area */
+  height: 500px; /* 🔧 Adjust height as needed */
+  object-fit: contain; /* Ensures the image covers the area */
   width: 100%;
 }
 .custom-modal-size .modal-content {
@@ -257,4 +256,7 @@ section.container h2 {
   width: 100%;
   height: 400px; /* Set the height of the video */
   object-fit: cover;
+}
+#viewApartmentBtn{
+  color: white;
 }

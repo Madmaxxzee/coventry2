@@ -18,13 +18,33 @@
     <link rel="stylesheet" href="style6.css" />
   </head>
   <body>
-    <header class="hero" id="heroSection">
+    <!-- <header class="hero" id="heroSection">
       <video id="heroVideo" autoplay muted loop playsinline>
         <source src="Herovideo.mp4" type="video/mp4" />
       </video>
 
-      <!-- All content inside one div, positioned bottom-center -->
+      All content inside one div, positioned bottom-center -->
+    <!-- </header> -->
+    <!-- <header class="hero d-flex align-items-end justify-content-center" id="heroSection" style="height: 100vh; position: relative;">
+      <video id="heroVideo" autoplay muted loop playsinline>
+        <source src="Herovideo.mp4" type="video/mp4" />
+      </video>
+      
+      <div class="text-center mb-5 z-1">
+        <a class="btn" id="viewApartmentBtn">View Apartment</a>
+      </div>
+    </header> -->
+    <header class="hero d-flex align-items-start justify-content-center" id="heroSection" style="height: 100vh; position: relative;">
+      <video id="heroVideo" autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+        <source src="Herovideo.mp4" type="video/mp4" />
+      </video>
+    
+      <div class="text-center mt-5 z-1 position-relative">
+        <a class="btn" id="viewApartmentBtn">View Apartment</a>
+      </div>
     </header>
+    
+    
     <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered custom-modal-size">
         <div class="modal-content">
@@ -56,7 +76,7 @@
           matching your lifestyle.
         </p>
         <button
-          class="btn btn-success btn-lg mt-0"
+          class="btn btn-success"
           onclick="document.getElementById('enquire').scrollIntoView()"
         >
           Enquire Now
